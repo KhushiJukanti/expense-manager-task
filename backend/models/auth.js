@@ -1,4 +1,3 @@
-// models/user.js
 const bcrypt = require('bcryptjs');
 const dynamoDb = require('../config/db');
 

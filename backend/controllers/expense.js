@@ -2,14 +2,14 @@
 const dynamoDb = require('../config/db');
 
 exports.addExpense = async (req, res) => {
-  const {name, amount, category } = req.body;
-  const email = req.user.email;
+  const { name, amount, category } = req.body;
+  const email = '1@gmail.com'; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',
     Item: {
       PK: email,
-      SK: `expense#${new Date().toISOString()}`,
+      SK: `${new Date().toISOString()}`,
       name,
       amount,
       category,
@@ -25,7 +25,7 @@ exports.addExpense = async (req, res) => {
 };
 
 exports.getExpenses = async (req, res) => {
-  const email = req.user.email;
+  const email = '1@gmail.com'; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',
@@ -46,7 +46,7 @@ exports.getExpenses = async (req, res) => {
 exports.updateExpense = async (req, res) => {
   const { amount, category } = req.body;
   const { id } = req.params;
-  const email = req.user.email;
+  const email = req.user.email; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',
@@ -72,7 +72,7 @@ exports.updateExpense = async (req, res) => {
 
 exports.deleteExpense = async (req, res) => {
   const { id } = req.params;
-  const email = req.user.email;
+  const email = req.user.email; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',

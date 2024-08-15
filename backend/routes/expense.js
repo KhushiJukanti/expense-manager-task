@@ -5,9 +5,9 @@ const authMiddleware = require('../middlewares/auth');
 
 const router = express.Router();
 
-router.post('/expenses',authMiddleware, addExpense);
-router.get('/expenses', authMiddleware, getExpenses);
+router.post('/expenses', addExpense);
+router.get('/expenses', getExpenses);
 router.put('/expenses/:id', authMiddleware, updateExpense);
-router.delete('/expenses/:id', authMiddleware, deleteExpense);
+router.delete('/expenses/:id', deleteExpense);
 
 module.exports = router;
