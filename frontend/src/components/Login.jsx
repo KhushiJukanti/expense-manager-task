@@ -44,7 +44,9 @@ function Login() {
                     localStorage.setItem("loggedInUser",JSON.stringify({email:result.email,userId:result.userId}))
                     localStorage.setItem("isLoggedIn",true)
                     
-                    navigate("/userDetails")
+                    console.log('Hello')
+                    navigate("/expenses")
+                    console.log('Hi')
                     
                     
                     
@@ -87,7 +89,7 @@ function Login() {
                             <input type="submit" value="Login" className='btn btn-primary w-100 mb-3 mt-3' style={{ backgroundColor: "#106EBE", border: "1px solid #009688" }} />
 
                             <div className='mb-4'>
-                                <span>Don't have an Account?</span> <Link to='/' className="link-offset-2 link-underline link-underline-opacity-10">Signup</Link>
+                                <span>Don't have an Account?</span> <Link to='/' className="link-offset-2 link-underline link-underline-opacity-10">Register</Link>
                             </div>
 
                             {isError && <div className='mb-3'>
