@@ -1,3 +1,5 @@
+// controllers/expenseController.js
+
 const dynamoDb = require('../config/db');
 
 exports.addExpense = async (req, res) => {
