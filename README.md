@@ -38,7 +38,7 @@ This is a MERN stack application that allows users to manage their personal expe
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/expense-manager.git
+   git clone https://github.com/KhushiJukanti/expense-manager-task.git
    cd expense-manager/frontend
    ```
 
