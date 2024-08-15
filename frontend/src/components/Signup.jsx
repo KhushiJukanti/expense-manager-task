@@ -41,7 +41,7 @@ function Signup() {
         }).then((res) => res.json()).then((result) => {
             // navigate("/login");
             console.log(result)
-            if (result.message == 'User registered successfully') {
+            if (result.message === 'User registered successfully') {
                 navigate("/login");
             } else {
                 setIsError(true);
