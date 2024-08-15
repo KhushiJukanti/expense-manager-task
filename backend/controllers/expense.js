@@ -2,7 +2,7 @@
 const dynamoDb = require('../config/db');
 
 exports.addExpense = async (req, res) => {
-  const { amount, description } = req.body;
+  const {name, amount, category } = req.body;
   const email = req.user.email;
 
   const params = {
@@ -10,8 +10,9 @@ exports.addExpense = async (req, res) => {
     Item: {
       PK: email,
       SK: `expense#${new Date().toISOString()}`,
+      name,
       amount,
-      description,
+      category,
     },
   };
 
@@ -43,7 +44,7 @@ exports.getExpenses = async (req, res) => {
 };
 
 exports.updateExpense = async (req, res) => {
-  const { amount, description } = req.body;
+  const { amount, category } = req.body;
   const { id } = req.params;
   const email = req.user.email;
 
@@ -53,10 +54,10 @@ exports.updateExpense = async (req, res) => {
       PK: email,
       SK: id,
     },
-    UpdateExpression: 'set amount = :amount, description = :description',
+    UpdateExpression: 'set amount = :amount, category = :category',
     ExpressionAttributeValues: {
       ':amount': amount,
-      ':description': description,
+      ':category': category,
     },
     ReturnValues: 'UPDATED_NEW',
   };
