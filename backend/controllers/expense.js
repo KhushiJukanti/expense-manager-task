@@ -46,7 +46,7 @@ exports.getExpenses = async (req, res) => {
 exports.updateExpense = async (req, res) => {
   const { amount, category } = req.body;
   const { id } = req.params;
-  const email = req.user.email; // Now we correctly use req.user.email
+  const email = '1@gmail.com'; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',
@@ -72,7 +72,7 @@ exports.updateExpense = async (req, res) => {
 
 exports.deleteExpense = async (req, res) => {
   const { id } = req.params;
-  const email = req.user.email; // Now we correctly use req.user.email
+  const email = '1@gmail.com'; // Now we correctly use req.user.email
 
   const params = {
     TableName: 'Expenses',
@@ -89,3 +89,10 @@ exports.deleteExpense = async (req, res) => {
     res.status(500).json({ message: 'Error deleting expense', error });
   }
 };
+
+
+
+
+
+
+
