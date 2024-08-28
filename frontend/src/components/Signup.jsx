@@ -22,9 +22,9 @@ function Signup() {
     const validateFormFields = () => {
         let errors = {};
         if (!user.username.trim()) {
-            errors.username = "Please enter a valid first name";
+            errors.username = "Please enter a valid name";
         }
-        if (!user.email.trim()) {
+        if(!user.email.trim()) {
             errors.email = "Please enter a valid email address";
         }
         if (!user.password) {
@@ -71,7 +71,7 @@ function Signup() {
                                     <label className='form-label text-start'>Name*</label>
                                     <input placeholder='Enter your name' type='text' className='form-control' value={user.username} onChange={onFieldChange} name='username' />
                                 </div>
-                                <p className='error-text'>{errors?.firstname}</p>
+                                <p className='error-text'>{errors?.username}</p>
 
                                 <div className='mb-4'>
                                     <label className='form-label text-start'>Email*</label>
